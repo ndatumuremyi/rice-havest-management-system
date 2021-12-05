@@ -22,7 +22,7 @@
         txtLName.Clear()
         txtLocation.Clear()
     End Sub
-    Private Sub DeleteSite(ByRef s_id As String)
+    Private Sub DeleteIt(ByRef s_id As String)
 
         Try
             Dim sql As String
@@ -30,7 +30,7 @@
             Dim dt As New DataTable
             Dim da As New OleDb.OleDbDataAdapter
 
-            sql = "DELETE * from farmer WHERE id=" & s_id & ""
+            sql = "DELETE * from farmers WHERE id=" & s_id & ""
             cm.Connection = cn
             cm.CommandText = sql
             da.SelectCommand = cm
@@ -138,7 +138,15 @@
 
         View()
         clear()
+        MsgBox("done")
 
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        DeleteIt(id)
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
     End Sub
 End Class
