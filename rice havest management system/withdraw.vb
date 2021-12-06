@@ -86,8 +86,8 @@
         Try
 
             If (cboFarmer.SelectedIndex.Equals(-1)) Then
-                MsgBox("msg farn")
-                'Exit Sub
+                'MsgBox("msg farn")
+                Exit Sub
             End If
             Dim farmer As String = cboFarmer.SelectedItem.ToString()
 
